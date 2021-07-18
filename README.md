@@ -6,7 +6,7 @@ Wojciech Spychalski, Agata Szpotek
 Autorzy projektu zaprojektowali i zaimplementowali algorytm pełnego przeglądu podzbiorów wierzchołków grafu, które pokrywają sąsiednie wierzchołki zarówno 1 jak i 2 rzędu. W artykule zawarty jest algorytm sprawdzający pokrycie danego podzbioru, generujący zbiór potęgowy zbioru wierzchołków grafu oraz procedura wykonująca pełen przegląd grafu. Oprócz algorytmów znajduje się tutaj również wizualizacja problemu przy pomocy macierzy oraz oprogramowania generującego grafy GraphViz, a także wykresy związane z średnim czasem wykonania przeglądu oraz średnią wielkością pokrywającego graf podzbioru wierzchołków.
 
 
-Słowa kluczowe: 
+**Słowa kluczowe:** 
   - https://pl.wikipedia.org/wiki/Pokrycie_wierzcho%C5%82kowe
   - https://en.wikipedia.org/wiki/Neighbourhood_(graph_theory)
   - https://en.wikipedia.org/wiki/Second_neighborhood_problem
@@ -20,13 +20,13 @@ Problem <img src="https://render.githubusercontent.com/render/math?math=VC^{(2)}
 
 **Pytanie**: Przy jakich wartościach <img src="https://render.githubusercontent.com/render/math?math=p"> w modelu <img src="https://render.githubusercontent.com/render/math?math=G(n,p)"> oczekiwana liczba wierzchołków należących do rozwiązania równa się 1, 2, 3. 
 
-**Przypadek graniczny:** Jeżeli <img src="https://render.githubusercontent.com/render/math?math=p=1.0"> $p=1.0$ wówczas w modelu <img src="https://render.githubusercontent.com/render/math?math=G(n,p)"> losowany jest graf pełny <img src="https://render.githubusercontent.com/render/math?math=K_n">. Dla grafu <img src="https://render.githubusercontent.com/render/math?math=K_n"> optymalnym rozwiązaniem problemu <img src="https://render.githubusercontent.com/render/math?math=VC^{(2)}"> jest wybór jednego (dowolnego) z jego wierzchołków. 
+**Przypadek graniczny:** Jeżeli <img src="https://render.githubusercontent.com/render/math?math=p=1.0"> wówczas w modelu <img src="https://render.githubusercontent.com/render/math?math=G(n,p)"> losowany jest graf pełny <img src="https://render.githubusercontent.com/render/math?math=K_n">. Dla grafu <img src="https://render.githubusercontent.com/render/math?math=K_n"> optymalnym rozwiązaniem problemu <img src="https://render.githubusercontent.com/render/math?math=VC^{(2)}"> jest wybór jednego (dowolnego) z jego wierzchołków. 
 
 **Pozostałe przypadki:** Wykres średniej wielkość zbioru pokrywającego graf dla założonych prawdopodobieństw <img src="https://render.githubusercontent.com/render/math?math=p=0.25,0.50,0.75"> został umieszczony w dziale **Wykresy średniej wielkości dobrego zbioru (takiego, który pokrywa graf)**
 
 #### Wykresy opisujące złożoność
 
-Wykresy te opisują stosunek czasu wykonania (w sekundach) `Pełnego przeglądu grafu` dla <img src="https://render.githubusercontent.com/render/math?math=G_n"> do czasu wykonania (w sekundach) `Pełnego przeglądu grafu ` <img src="https://render.githubusercontent.com/render/math?math=G_\frac{n}{2}$ $f(\frac{t(n)}{t(\frac{n}{2})})">, gdzie <img src="https://render.githubusercontent.com/render/math?math=n"> to liczba wierzchołków w grafie, dla każdego z założonych prawdopodobieństw <img src="https://render.githubusercontent.com/render/math?math=p=0.25,0.50,0.75">:
+Wykresy te opisują stosunek czasu wykonania (w sekundach) **Pełnego przeglądu grafu** dla <img src="https://render.githubusercontent.com/render/math?math=G_n"> do czasu wykonania (w sekundach) **Pełnego przeglądu grafu** <img src="https://render.githubusercontent.com/render/math?math=G_\frac{n}{2}$ $f(\frac{t(n)}{t(\frac{n}{2})})">, gdzie <img src="https://render.githubusercontent.com/render/math?math=n"> to liczba wierzchołków w grafie, dla każdego z założonych prawdopodobieństw <img src="https://render.githubusercontent.com/render/math?math=p=0.25,0.50,0.75">:
 
 #### Wykres dla p = 0.25
 
@@ -83,7 +83,7 @@ Dla drzew binarnych niezbalansowanych ze względu na "luki" należy skok między
 
 ### Cykle 
 
-Grafy <img src="https://render.githubusercontent.com/render/math?math=C_n"> (o parzystej i nieparzystej długości) są optymalnie pokryte po przez <img src="https://render.githubusercontent.com/render/math?math=\lceil n/5 \rceil">  wierzchołków. Dowolna para takiego cyklu go pokrywa, pod warunkiem, że między wierzchołkami jest odległość <img src="https://render.githubusercontent.com/render/math?math=< n \mod 5;5 >"> > dla <img src="https://render.githubusercontent.com/render/math?math=n \mod 5 \ne 0">. Dla <img src="https://render.githubusercontent.com/render/math?math=n \mod 5 = 0"> odległość zawsze wynosi 5.  
+Grafy <img src="https://render.githubusercontent.com/render/math?math=C_n"> (o parzystej i nieparzystej długości) są optymalnie pokryte po przez <img src="https://render.githubusercontent.com/render/math?math=\lceil n/5 \rceil">  wierzchołków. Dowolna para takiego cyklu go pokrywa, pod warunkiem, że między wierzchołkami jest odległość  <img src="https://render.githubusercontent.com/render/math?math=< n "> <img src="https://render.githubusercontent.com/render/math?math=mod"> <img src="https://render.githubusercontent.com/render/math?math=5">;<img src="https://render.githubusercontent.com/render/math?math=5 >"> dla <img src="https://render.githubusercontent.com/render/math?math=n \mod 5 \ne 0">. Dla <img src="https://render.githubusercontent.com/render/math?math=n \mod 5 = 0"> odległość zawsze wynosi 5.  
 
 *Pokrycie* <img src="https://render.githubusercontent.com/render/math?math=C_7"> *przy pomocy dwóch wierzchołków*
 
@@ -188,13 +188,16 @@ def gnp(n, p):
 
 ### Weryfikacja poprawności rozwiązania
 
-^ Dane ^ Opis ^
-| ''vertexAmount'' | liczba wierzchołków w grafie |
-| ''matrix''  | macierz sąsiedztwa|
-| ''answers'' | rozwiązanie poddawane weryfikacji|
-| ''check_table'' | tablica z 0 i 1 informująca czy wierzchołek(indeks) został pokryty(1), czy nie(0)|
+| Dane         | Opis                                                                       |
+|--------------|----------------------------------------------------------------------------|
+| vertexAmount | liczba wierzchołków w grafie                                               |
+| matrix       | macierz sąsiedztwa                                                         |
+| answers      | rozwiązanie poddawane weryfikacji                                          |
+| check_table  | tablica informująca czy wierzchołek(indeks)  został pokryty(1), czy nie(0) |
 
-<code python>
+
+
+```
 def graph_cover_test(vertexAmount,matrix,answers):
     check_table=[]
     for i in range(vertexAmount):
@@ -211,42 +214,48 @@ def graph_cover_test(vertexAmount,matrix,answers):
         return False
     else:
         return True
-</code>
+```
 
 
-** Średnia złożoność: ** 
+#### Średnia złożoność:
 
-**$\mathcal{O}(k \cdot n^2)$** 
+<img src="https://render.githubusercontent.com/render/math?math=\mathcal{O}(k \cdot n^2)"> 
+
+#### Złożoność pesymistyczna:
+
+<img src="https://render.githubusercontent.com/render/math?math=\mathcal{O}(n^3)">
 
 
-** Złożoność pesymistyczna: ** 
-
-**$\mathcal{O}(n^3)$**
-gdyż w pesymistycznym przypadku **$k$** wynosi **$n$**
-
-| ''k''  | ''liczba wierzchołków w rozwiązaniu''|
-| ''n'' | ''liczba wszystkich wierzchołków''|
+gdyż w pesymistycznym przypadku <img src="https://render.githubusercontent.com/render/math?math=k"> wynosi <img src="https://render.githubusercontent.com/render/math?math=n">
 
 
 
-===== Algorytm zachłanny =====
+<img src="https://render.githubusercontent.com/render/math?math=k"> - *liczba wierzchołków w rozwiązaniu*
+
+<img src="https://render.githubusercontent.com/render/math?math=n"> - *liczba wszystkich wierzchołków*
+
+
+
+### Algorytm zachłanny
+
 Algorytm:
   - oblicza ile wierzchołków może pokryć każdy z wierzchołków
   - wybiera najlepszy z nich i dodaje do rozwiązania
   - wykonywany jest test pokrycia grafu - w przypadku powodzenia algorytm kończy pracę, w przeciwnym przypadku usuwa krawędzie wybranego wierzchołka i ponownie wykonuje wszystkie kroki algorytmu
 
-==== Zmodyfikowany algorytm testu pokrycia ====
+#### Zmodyfikowany algorytm testu pokrycia
 Do tego algorytmu musimy zmodyfikować algorytm testu pokrycia, tak, aby zwracał oprócz odpowiedzi również liczbę niepokrytych wierzchołków
 
-^ Dane ^ Opis ^
-| ''vertexAmount'' | liczba wierzchołków w grafie |
-| ''matrix''  | macierz sąsiedztwa|
-| ''answers'' | rozwiązanie poddawane weryfikacji|
-| ''check_table'' | tablica z 0 i 1 informująca czy wierzchołek(indeks) został pokryty(1), czy nie(0)|
-| ''not_covered'' | ''tablica z niepokrytymi wierzchołkami'' |
-| ''corectly_covered'' | ''zmienna boolowska, informująca czy "answers" poprawanie pokrywa graf'' |
+| Dane              | Opis                                                                       |
+|-------------------|----------------------------------------------------------------------------|
+| vertexAmount      | liczba wierzchołków w grafie                                               |
+| matrix            | macierz sąsiedztwa                                                         |
+| answers           | rozwiązanie poddawane weryfikacji                                          |
+| check_table       | tablica informująca czy wierzchołek(indeks)  został pokryty(1), czy nie(0) |
+| not_covered       | tablica z niepokrytymi wierzchołkami                                       |
+| correctly_covered | zmienna boolowska, informująca czy "answers" pokrywa graf                  |
 
-<code python>
+```
 def graph_cover_test_greedy(vertexAmount,matrix,answers):
     check_table=[]
     for i in range(vertexAmount):
@@ -270,16 +279,19 @@ def graph_cover_test_greedy(vertexAmount,matrix,answers):
         corectly_covered = True
 
     return corectly_covered,not_covered
-</code>
-==== Pomocniczy algorytm zliczający moc pokrycia każdego z wierzchołków ====
-^ Dane ^ Opis ^
-| ''matrix'' | ''macierz sąsiedztwa'' |
-| ''vertexAmount'' | ''liczba wierzchołków w grafie'' |
-| ''covered'' | ''tablica z 0 i 1 informująca czy wierzchołek(indeks) został pokryty(1), czy nie(0)'' |
-| ''vertices'' | ''słownik numerów wierzchołków i ilością wierzchołów, które mogą one pokryć'' |
-| ''check_table'' | ''tablica z 0 i 1 informująca czy w danym przejściu pętli wierzchołek(indeks) został policzony jako możliwy do pokrycia(1), czy też nie(0)'' |
+```
 
-<code python>
+#### Pomocniczy algorytm zliczający moc pokrycia każdego z wierzchołków
+
+| Dane         | Opis                                                                                                                              |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| matrix       | macierz sąsiedztwa                                                                                                                |
+| vertexAmount | liczba wierzchołków w grafie                                                                                                      |
+| covered      | tablica informująca czy wierzchołek(indeks)  został pokryty(1), czy nie(0)                                                        |
+| vertices     | słownik numerów wierzchołków i ilością wierzchołków, które mogą pokryć                                                            |
+| check_table  | tablica informująca czy w danym przejściu pętli wierzchołek(indeks)  został policzony jako możliwy do pokrycia(1), czy też nie(0) |
+
+```
 def Connection_counter(matrix,vertexAmount,covered):
     vertices={}
     for vertex in range(vertexAmount):
@@ -302,27 +314,31 @@ def Connection_counter(matrix,vertexAmount,covered):
                             check_table[m] = 1
 
     return vertices
-</code>
+```
 
 
-** Złożoność: ** 
+##### Złożoność:
 
-**$\mathcal{O}(n^3)$**,
-| ''n'' | ''liczba wszystkich wierzchołków''|
-==== Właściwy algorytm zachłanny ====
-^ Dane ^ Opis ^
-| ''matrix''  | ''macierz sąsiedztwa''|
-| ''vertexAmount'' | ''liczba wierzchołków w grafie'' |
-| ''matrix_copy'' | ''kopia właściwej macierzy, na której są przeprowadzane działania usuwania polączeń'' |
-| ''covered'' | ''tablica z 0 i 1 informująca czy wierzchołek(indeks) został pokryty(1), czy nie(0)'' |
-| ''vertices'' | ''słownik numerów wierzchołków i ilością wierzchołów, które mogą one pokryć'' |
-| ''solution'' | ''tablica wierzchołków, które pokrywają cały graf'' |
-| ''test_result'' | ''zmienna boolowska, informuje czy "solution" pokryło graf i można zakończyć algorytm(True), czy nie(False)'' |
-| ''ordered_vertices'' | ''posortowane wierzchołki - od najwięcej niepokrytych wierzchołków pokrywającego do najmniej '' | 
-| ''best_one'' | ''wierzchołek, który w danej sytuacji pokrywa najwięcej niepokrytych wierzchołków'' |
-| ''not_covered'' | ''tablica zawierająca wierzchołki, których "solution" nie pokrywa'' |
+<img src="https://render.githubusercontent.com/render/math?math=\mathcal{O}(n^3)"> 
 
-<code python>
+<img src="https://render.githubusercontent.com/render/math?math=n"> - *liczba wszystkich wierzchołków*
+
+#### Właściwy algorytm zachłanny
+
+| Dane             | Opis                                                                                                           |
+|------------------|----------------------------------------------------------------------------------------------------------------|
+| matrix           | macierz sąsiedztwa                                                                                             |
+| vertexAmount     | liczba wierzchołków w grafie                                                                                   |
+| matrix_copy      | kopia właściwej macierzy, na której są  przeprowadzane działania usuwania połączeń                             |
+| covered          | tablica informująca czy wierzchołek(indeks)  został pokryty(1), czy nie(0)                                     |
+| vertices         | słownik numerów wierzchołków i ilością wierzchołków, które mogą pokryć                                         |
+| solution         | tablica wierzchołków, które pokrywają cały graf                                                                |
+| test_result      | zmienna boolowska, informuje czy "solution" pokryło graf  i czy można zakończyć algorytm(True), czy nie(False) |
+| ordered_vertices | posortowane wierzchołki - od najwięcej pokrywających wierzchołków do najmniej                                  |
+| best_one         | wierzchołek, który w danej sytuacji pokrywa najwięcej niepokrytych wierzchołków                                |
+| not_covered      | tablica zawierająca wierzchołki, których "solution" nie pokrywa                                                |
+
+```
 import copy
 
 def Greedy_graph_cover_test(matrix,vertexAmount):
@@ -362,29 +378,31 @@ def Greedy_graph_cover_test(matrix,vertexAmount):
         vertices = Connection_counter(matrix_copy, vertexAmount,covered)
 
     return solution
-</code>
+```
 
-** Średnia złożoność: ** 
+##### Średnia złożoność:
 
-**$\mathcal{O}(n^3)$** → zazwyczaj pętla while wykona się zaledwie parę razy, a najwięcej czasu zabiera ''Connection_counter''
+<img src="https://render.githubusercontent.com/render/math?math=\mathcal{O}(n^3)">  → zazwyczaj pętla while wykona się zaledwie parę razy, a najwięcej czasu zabiera **Connection_counter**
 
-** Złożoność pesymistyczna: **  
- **$\mathcal{O}(n^4)$**  →  pętla while wykona się ''n'' razy, a razem z nią ''Connection_counter''
+#### Złożoność pesymistyczna: 
+<img src="https://render.githubusercontent.com/render/math?math=\mathcal{O}(n^4)">  →  pętla while wykona się <img src="https://render.githubusercontent.com/render/math?math=n">  razy, a razem z nią **Connection_counter**
 
-| ''n'' | ''liczba wszystkich wierzchołków''|
-===== Algorytm przeszukujący wszystkie podzbiory (Brute Force) =====
+<img src="https://render.githubusercontent.com/render/math?math=n"> - *liczba wszystkich wierzchołków*
+
+
+### Algorytm przeszukujący wszystkie podzbiory (Brute Force)
 Algorytm przeszukuje wszystkie podzbiory grafu, wyświetla podzbiory i wynik testu na pokrycie oraz zwraca wszystkie optymalne rozwiązania
 
-==== Algorytm tworzący zbiór potęgowy grafu(Opcjonalnie) ====
+#### Algorytm tworzący zbiór potęgowy grafu(Opcjonalnie)
 Algorytm ten można spokojnie zastąpić funkcją **combinations(table_with_elements,number_of_element_to_choose)** z bibilotek **itertools**
 
-^ Dane ^ Opis ^
-| ''tab'' | ''lista z wierzchołkami'' |
-| ''vertexAmount'' | ''liczba wierzchołków w grafie'' |
-| ''results''  | ''lista ze wszystkimi podzbiorami grafu''|
+| Dane         | Opis                                  |
+|--------------|---------------------------------------|
+| tab          | lista z wierzchołkami                 |
+| vertexAmount | liczba wierzchołków w grafie          |
+| results      | lista ze wszystkimi podzbiorami grafu |
 
-
-<code python>
+```
 import copy
 #1. Tworzymy tablice wynikowa, z jednym zbiorem pustym
 #2. Przechodzimy po elementach tablicy wejsciowej
@@ -408,23 +426,26 @@ def power_set(tab,vertexAmount):
         tmp = []                       #zerujemy tablice wynikowa
 
     return results
-</code>
+```
 
-** Złożoność: ** 
-**$\mathcal{O}(2^n)$**
-| ''n'' | ''liczba wszystkich wierzchołków''|
+##### Złożoność:
 
-==== Algorytm pełnego przeglądu grafu w celu poszukiwania rozwiązań ====
+<img src="https://render.githubusercontent.com/render/math?math=\mathcal{O}(2^n)">
 
-^ Dane ^ Opis ^
-| ''vertexAmount'' | ''liczba wierzchołków w grafie'' |
-| ''matrix''  | ''macierz sąsiedztwa''|
-| ''vertices_list'' | ''lista z wierzchołkami''|
-| ''sets'' | ''lista ze wszystkimi podzbiorami grafu''|
-| ''test_results'' | ''lista z odpowiedziami, czy zbiór pokrywa graf (True/False)''|
-| ''test_result'' | ''pojedyńcza odpowiedź, czy zbiór pokrywa graf (True/False)''|
+<img src="https://render.githubusercontent.com/render/math?math=n"> - *liczba wszystkich wierzchołków*
 
-<code python>
+#### Algorytm pełnego przeglądu grafu w celu poszukiwania rozwiązań
+
+| Dane          | Opis                                                                |
+|---------------|---------------------------------------------------------------------|
+| vertexAmount  | liczba wierzchołków w grafie                                        |
+| matrix        | macierz sąsiedztwa                                                  |
+| vertices_list | lista z wierzchołkami                                               |
+| sets          | lista z wszystkimi podzbiorami grafu                                |
+| test_results  | lista z odpowiedziami, czy zbiór  pokrywa graf(True) lub nie(False) |
+| test_result   | pojedyncza odpowiedź, czy zbiór  pokrywa graf(True) lub nie(False)  |
+
+```
 def full_graph_cover_test(vertexAmount,matrix):
     vertices_list = []
     for e in range(vertexAmount):
@@ -449,15 +470,17 @@ def full_graph_cover_test(vertexAmount,matrix):
     print(test_results)
 
     return  best_solutions
-</code>
+```
 
-**Złożoność:**
-**$\mathcal{O}(2^n \cdot n^3)$** → każdy podzbiór musi być sprawdzony
-| ''n'' | ''liczba wszystkich wierzchołków''|
+##### Złożoność:
 
- 
-=== Sposób z użyciem mniejszej ilości pamięci (optymalizacja związana z podzbiorami) ===
-<code python>
+<img src="https://render.githubusercontent.com/render/math?math=(2^n \cdot n^3)"> → każdy podzbiór musi być sprawdzony
+
+<img src="https://render.githubusercontent.com/render/math?math=n"> - *liczba wszystkich wierzchołków*
+
+#### Sposób z użyciem mniejszej ilości pamięci (optymalizacja związana z podzbiorami) - użycie biblioteki itertools
+
+```
 import itertools
 
 def full_graph_cover_test2(vertexAmount,matrix):
@@ -484,49 +507,58 @@ def full_graph_cover_test2(vertexAmount,matrix):
     print(test_results)
 
     return  best_solutions
-</code>
+```
 
 
-==== Wykresy czasów wykonania ====
+#### Wykresy czasów wykonania
+
 Wszystkie wykresy zostały wykonane dla próbki danych liczącej **100** różnych grafów dla każdej liczby wierzchołków N.
 
-=== Czas wykonania (w sekundach) pełnego przeglądu grafu o liczbie wierzchołków równej N dla prawdopodobieństwa stworzenia krawędzi p = 0.25: ===
-{{ :ok20:pr013:p145392:wykres25.png?600 |}}
+##### Czas wykonania (w sekundach) pełnego przeglądu grafu o liczbie wierzchołków równej N dla prawdopodobieństwa stworzenia krawędzi p = 0.25:
 
-=== Czas wykonania (w sekundach) pełnego przeglądu grafu o liczbie wierzchołków równej N dla prawdopodobieństwa stworzenia krawędzi p = 0.5: ===
-{{ :ok20:pr013:p145392:wykres50.png?600 |}}
+![image](https://user-images.githubusercontent.com/72743103/126084499-ca5dda15-ff3b-49f7-be15-b06ee81276d6.png)
 
-=== Czas wykonania (w sekundach) pełnego przeglądu grafu o liczbie wierzchołków równej N dla prawdopodobieństwa stworzenia krawędzi p = 0.75: ===
-{{ :ok20:pr013:p145392:wykres75.png?600 |}}
+##### Czas wykonania (w sekundach) pełnego przeglądu grafu o liczbie wierzchołków równej N dla prawdopodobieństwa stworzenia krawędzi p = 0.5:
 
-==== Wykresy średniej wielkości dobrego zbioru (takiego, który pokrywa graf) ====
+![image](https://user-images.githubusercontent.com/72743103/126084511-5987941a-3c56-4f1b-a58c-240735d2bb67.png)
 
-=== Średnia wielkość dobrego zbioru grafu o liczbie wierzchołków równej N dla prawdopodobieństwa stworzenia krawędzi p = 0.25: ===
-{{ :ok20:pr013:p145392:zbior25.png?600 |}}
+##### Czas wykonania (w sekundach) pełnego przeglądu grafu o liczbie wierzchołków równej N dla prawdopodobieństwa stworzenia krawędzi p = 0.75:
 
-=== Średnia wielkość dobrego zbioru grafu o liczbie wierzchołków równej N dla prawdopodobieństwa stworzenia krawędzi p = 0.5: ===
-{{ :ok20:pr013:p145392:zbior50.png?600 |}}
+![image](https://user-images.githubusercontent.com/72743103/126084527-7c62b32a-675b-48b5-afba-ac665c5e9561.png)
 
-=== Średnia wielkość dobrego zbioru grafu o liczbie wierzchołków równej N dla prawdopodobieństwa stworzenia krawędzi p = 0.75: ===
-{{ :ok20:pr013:p145392:zbior75.png?600 |}}
+#### Wykresy średniej wielkości dobrego zbioru (takiego, który pokrywa graf)
 
-=== Zbiórczy wykres średnich wielkości dobrego zbioru dla wszystkich wyżej wymienionych prawdopodobieństw p: ===
-{{ :ok20:pr013:p145392:zbiory.png?600 |}}
+##### Średnia wielkość dobrego zbioru grafu o liczbie wierzchołków równej N dla prawdopodobieństwa stworzenia krawędzi p = 0.25:
 
-===== Algorytm prezentujący rozwiązanie przybliżone =====
-Na podstawie pomiarów średniego zbioru pokrywającego graf przeprowadzonych na ''Algorytmie pełnego przeglądu podzbiorów'' i regresji przeprowadzonych na uzyskanych wynikach otrzymaliśmy wzór na średnią wielkość pokrywającego podzbioru. Następnie przegląd podzbiorów zaczynamy od podzbiorów o wyliczonej wcześniej wartości. Kończymy po odnalezieniu pierwszego rozwiązania.
+![image](https://user-images.githubusercontent.com/72743103/126084539-3b6a1b64-cf3b-4049-aae6-6f05b5d7fa58.png)
+
+##### Średnia wielkość dobrego zbioru grafu o liczbie wierzchołków równej N dla prawdopodobieństwa stworzenia krawędzi p = 0.5:
+
+![image](https://user-images.githubusercontent.com/72743103/126084558-427fcca0-d24c-45f3-aafa-b2c8c55eb24a.png)
+
+##### Średnia wielkość dobrego zbioru grafu o liczbie wierzchołków równej N dla prawdopodobieństwa stworzenia krawędzi p = 0.75:
+
+![image](https://user-images.githubusercontent.com/72743103/126084563-78a4a210-4a96-49a8-911c-eef46fbae71c.png)
+
+##### Zbiórczy wykres średnich wielkości dobrego zbioru dla wszystkich wyżej wymienionych prawdopodobieństw p:
+
+![image](https://user-images.githubusercontent.com/72743103/126084575-abe602ed-b0ba-4ba9-9a41-772af29c7537.png)
+
+### Algorytm prezentujący rozwiązanie przybliżone
+Na podstawie pomiarów średniego zbioru pokrywającego graf przeprowadzonych na **Algorytmie pełnego przeglądu podzbiorów** i regresji przeprowadzonych na uzyskanych wynikach otrzymaliśmy wzór na średnią wielkość pokrywającego podzbioru. Następnie przegląd podzbiorów zaczynamy od podzbiorów o wyliczonej wcześniej wartości. Kończymy po odnalezieniu pierwszego rozwiązania.
 
 **To rozwiązanie zwraca optymalne, choć nie zawsze najlepsze rozwiązanie**
 
-^ Dane ^ Opis ^
-| ''matrix'' | ''macierz sąsiedztwa'' |
-| ''vertexAmount'' | ''liczba wierzchołków w grafie'' |
-| ''p'' | ''prawdopodobieństwo z jakim tworzono krawędzie w grafie'' |
-| ''vertices''  | ''wszystkie wierzchołki podane w jednej liście''|
-| ''minimalLength'' | ''zaokrąglona w górę wyliczona średnia wielkość pokrywającego podzbioru'' |
-| ''subsets'' | ''podzbiory grafu o podanej wielkości'' |
+| Dane          | Opis                                                                  |
+|---------------|-----------------------------------------------------------------------|
+| matrix        | macierz sąsiedztwa                                                    |
+| vertexAmount  | liczba wierzchołków w grafie                                          |
+| p             | prawdopodobieństwo z jakim tworzono krawędzie w grafie                |
+| vertices      | wszystkie wierzchołki podane w jednej liście                          |
+| minimalLength | zaokrąglona w górę wyliczona średnia wielkość pokrywającego podzbioru |
+| substets      | podzbiory grafu o podanej wielkości                                   |
 
-<code python>
+```
 import itertools
 import math
 
@@ -548,30 +580,33 @@ def Aproximated_graph_cover_test(matrix, vertexAmount, p):
         for subset in subsets:
             if (graph_cover_test(vertexAmount,matrix,subset) == True):
                 return subset
-</code>
+```
 
-**Średnia złożoność:**
+#### Średnia złożoność:
 
-**$\mathcal{O}(n^3)$** → zazwyczaj algorytm przechodzi tylko kilka pętli
+<img src="https://render.githubusercontent.com/render/math?math=\mathcal{O}(n^3)">  → zazwyczaj algorytm przechodzi tylko kilka pętli
+
+#### Złożoność pesymistyczna:
 
 
-**Złożoność pesymistyczna:**
+<img src="https://render.githubusercontent.com/render/math?math=\mathcal{O}(m \cdot n^3)"> → <img src="https://render.githubusercontent.com/render/math?math=\mathcal{O}(n^4)">
 
-**$\mathcal{O}(m \cdot n^3)$** → $\mathcal{O}(n^4)$
+<img src="https://render.githubusercontent.com/render/math?math=m = 2^n - 2^{\lfloor w \rfloor}"> 
 
-**$m = 2^n - 2^{\lfloor w \rfloor}$**
+<img src="https://render.githubusercontent.com/render/math?math=w">  - *wyliczona średnia wartość dobrego podzbioru*
 
-| ''w'' | ''wyliczona średnia wartość dobrego podzbioru'' |
-| ''n'' | ''liczba wszystkich wierzchołków''|
-| ''m'' | ''maksymalna liczba podzbiorów, które mogą sprawdzone w tym algorytmie'' | 
-====== Wizualizacja z użyciem GraphViz ======
+<img src="https://render.githubusercontent.com/render/math?math=n"> - *liczba wszystkich wierzchołków*
+
+<img src="https://render.githubusercontent.com/render/math?math=m"> - *maksymalna liczba podzbiorów, które mogą sprawdzone w tym algorytmie*
+
+## Wizualizacja z użyciem GraphViz
 Aby móc uruchamiać poniższe algorytmy trzeba do projektu dodać bibliotekę **graphviz**
-===== Instalacja GraphViz =====
-  - Pobrać oprogramowanie GraphViz z [[https://graphviz.org/download/]]
-  - Dodać ścieżkę do folderu "bin" oprogramowania GraphViz do zmiennej środowiskowej "Path".
+#### Instalacja GraphViz
+  - Pobrać oprogramowanie GraphViz z https://graphviz.org/download/
+  - Dodać ścieżkę do folderu "bin" oprogramowania GraphViz do zmiennej środowiskowej *Path*.
   
 Przykład:
-     "C:\Program Files (x86)\Graphviz2.38\bin"
+     *C:\Program Files (x86)\Graphviz2.38\bin*
      
 Polecam korzystać z wersji 2.38, dla wersji nowszych/niekompletnych wizualizacja może nie zadziałać.
     
@@ -579,17 +614,19 @@ Link do bezpośredniego pobrania (pochodzi ze skryptu używanego przy pobieraniu
      
 **Uwaga!** Gdyby przy kompilacji kodu nastąpił błąd:
 
-     "graphviz.backend.executablenotfound: failed to execute ['circo', '-tpng', '-o', 'graph.gv'], make sure the graphviz executables are on your systems' path"
+`graphviz.backend.executablenotfound: failed to execute ['circo', '-tpng', '-o', 'graph.gv'], make sure the graphviz executables are on your systems' path`
      
-należy do zmiennej środowiskowej "Path" dodać ścieżkę bezpośrednio do pliku "circo.exe" oprogramowania Graphviz.
-     Przykład:
-     "C:\Program Files (x86)\Graphviz2.38\bin\circo.exe"
+należy do zmiennej środowiskowej *Path* dodać ścieżkę bezpośrednio do pliku "circo.exe" oprogramowania Graphviz.
+
+Przykład:
+     *C:\Program Files (x86)\Graphviz2.38\bin\circo.exe*
 
 
-===== Generowanie grafów =====
+### Generowanie grafów 
 
-[[https://pw20we.cs.put.poznan.pl/doku.php?id=ok:modele_grafow_losowych]]
-<code python>
+https://pw20we.cs.put.poznan.pl/doku.php?id=ok:modele_grafow_losowych
+
+```
 def gnp(n, p):
     "Model G(n,p)"
     a = [[0 for j in range(n)] for i in range(n)]
@@ -598,20 +635,21 @@ def gnp(n, p):
             if (random.random() <= p):
                 a[i][j] = a[j][i] = 1
     return a
-</code>
+```
 
 
-===== Weryfikacja poprawności rozwiązania =====
+### Weryfikacja poprawności rozwiązania
 
-^ Dane ^ Opis ^
-| ''vertexAmount'' | ''liczba wierzchołków w grafie'' |
-| ''matrix''  | ''macierz sąsiedztwa''|
-| ''answers'' | ''rozwiązanie poddawane weryfikacji''|
-| ''matrix_to_graphViz'' | ''zmodyfikowana tablica sąsiadów, która przyda się przy wizualizacji testu''|
-| ''check_table'' | ''tablica z 0 i 1 informująca czy wierzchołek(indeks) został pokryty(1), czy nie(0)''|
-| ''correctly_covered'' | ''zmienna boolowska informująca czy rozwiązanie jest prawidłowe''|
+| Dane              | Opis                                                                       |
+|-------------------|----------------------------------------------------------------------------|
+| vertexAmount      | liczba wierzchołków w grafie                                               |
+| matrix            | macierz sąsiedztwa                                                         |
+| answers           | rozwiązanie poddawane weryfikacji                                          |
+| matrix_to_graphViz | zmodyfikowana macierz sąsiadów, która przyda się przy wizualizacji testu |
+| check_table       | tablica informująca czy wierzchołek(indeks) został pokryty(1), czy nie(0) |
+| correctly_covered | zmienna boolowska, informująca czy "answers" pokrywa graf                  |
 
-<code python>
+```
 from copy import deepcopy
 
 def graph_cover_test_graphViz(vertexAmount,matrix,answers):
@@ -643,21 +681,23 @@ def graph_cover_test_graphViz(vertexAmount,matrix,answers):
         print("Correctly covered.")
         correctly_covered = True
     return correctly_covered,not_covered,matrix_to_graphViz
-</code>
-===== Prezentacja testu z użyciem oprogramowania GraphViz=====
+```
 
-^ Dane ^ Opis ^
-| ''vertexAmount'' | ''liczba wierzchołków w grafie'' |
-| ''matrix_to_graphViz'' | ''zmodyfikowana tablica sąsiadów, która przyda się przy wizualizacji testu''|
-| ''answers'' | ''rozwiązanie poddawane weryfikacji''|
-| ''not_covered'' | ''lista niepokrytych wierzchołków''|
-| ''file_number'' | ''numer dopisany do "Graph" w nazwie plików wyjściowych''|
-| ''display'' | '' graf''|
-| ''answer'' | ''zmienna boolowska informująca czy wierzchołek był w rozwiązaniu''|
-| ''uncovered'' | ''zmienna boolowska informująca czy wierzchołek nie został przykryty''|
+#### Prezentacja testu z użyciem oprogramowania GraphViz
+
+| Dane               | Opis                                                                     |
+|--------------------|--------------------------------------------------------------------------|
+| vertexAmount       | liczba wierzchołków w grafie                                             |
+| matrix_to_graphViz | zmodyfikowana macierz sąsiadów, która przyda się przy wizualizacji testu |
+| answers            | rozwiązanie poddawane weryfikacji                                        |
+| not_covered        | lista niepokrytych wierzchołków                                          |
+| file_number        | numer dopisany do "Graph" w nazwie plików wyjściowych                    |
+| display            | graf                                                                     |
+| answer             | zmienna boolowska informująca czy wierzchołek był w rozwiązaniu          |
+| uncovered          | zmienna boolowska informująca czy wierzchołek nie został przykryty       |
 
 
-<code python>
+```
 import graphviz
 
 
@@ -689,20 +729,23 @@ def display_cover_test_in_graphViz(vertexAmount,matrix_to_graphViz,answers,not_c
     # print(display.source)             # kod w GraphViz
     display.render( format='png')              # generuje plik z kodem do Graphviz i plik png z wizualizacją testu
     #display.render(view='true', format='png')   # to co wyżej + otwiera plik png do podgladu
-</code>
+```
 
 
 
-===== Algorytm zachłanny =====
-==== Pomocniczy algorytm zliczający moc pokrycia każdego z wierzchołków ====
-^ Dane ^ Opis ^
-| ''matrix''  | ''macierz sąsiedztwa''|
-| ''vertexAmount'' | ''liczba wierzchołków w grafie'' |
-| ''covered'' | ''tablica z 0 i 1 informująca czy wierzchołek(indeks) został pokryty(1), czy nie(0)'' |
-| ''vertices'' | ''słownik numerów wierzchołków i ilością wierzchołów, które mogą one pokryć'' |
-| ''check_table'' | ''tablica z 0 i 1 informująca czy w danym przejściu pętli wierzchołek(indeks) został policzony jako możliwy do pokrycia(1), czy też nie(0)''|
+### Algorytm zachłanny
 
-<code python>
+#### Pomocniczy algorytm zliczający moc pokrycia każdego z wierzchołków
+
+| Dane         | Opis                                                                                                                              |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| matrix       | macierz sąsiedztwa                                                                                                                |
+| vertexAmount | liczba wierzchołków w grafie                                                                                                      |
+| covered      | tablica informująca czy wierzchołek(indeks)  został pokryty(1), czy nie(0)                                                        |
+| vertices     | słownik numerów wierzchołków i ilością wierzchołków, które mogą pokryć                                                            |
+| check_table  | tablica informująca czy w danym przejściu pętli wierzchołek(indeks)  został policzony jako możliwy do pokrycia(1), czy też nie(0) |
+
+```
 def Connection_counter(matrix,vertexAmount,covered):
     vertices={}
     for vertex in range(vertexAmount):
@@ -725,25 +768,26 @@ def Connection_counter(matrix,vertexAmount,covered):
                             check_table[m] = 1
 
     return vertices
+```
 
-</code>
 
+#### Właściwy algorytm zachłanny
 
-==== Właściwy algorytm zachłanny ====
-^ Dane ^ Opis ^
-| ''matrix''  | ''macierz sąsiedztwa''|
-| ''vertexAmount'' | ''liczba wierzchołków w grafie'' |
-| ''matrix_copy'' | ''kopia właściwej macierzy, na której są przeprowadzane działania usuwania polączeń'' |
-| ''covered'' | ''tablica z 0 i 1 informująca czy wierzchołek(indeks) został pokryty(1), czy nie(0)'' |
-| ''vertices'' | ''słownik numerów wierzchołków i ilością wierzchołów, które mogą one pokryć'' |
-| ''solution'' | ''tablica wierzchołków, które pokrywają cały graf'' |
-| ''test_result'' | ''zmienna boolowska, informuje czy "solution" pokryło graf i można zakończyć algorytm(True), czy nie(False)'' |
-| ''ordered_vertices'' | ''posortowane wierzchołki - od najwięcej niepokrytych wierzchołków pokrywającego do najmniej '' | 
-| ''best_one'' | ''wierzchołek, który w danej sytuacji pokrywa najwięcej niepokrytych wierzchołków'' |
-| ''not_covered'' | ''tablica zawierająca wierzchołki, których "solution" nie pokrywa'' |
-| ''matrix_to_graphViz'' | ''zmodyfikowana macierz, przyda się przy wizualizacji rozwiązania'' |
+| Dane             | Opis                                                                                                           |
+|------------------|----------------------------------------------------------------------------------------------------------------|
+| matrix           | macierz sąsiedztwa                                                                                             |
+| vertexAmount     | liczba wierzchołków w grafie                                                                                   |
+| matrix_copy      | kopia właściwej macierzy, na której są  przeprowadzane działania usuwania połączeń                             |
+| covered          | tablica informująca czy wierzchołek(indeks)  został pokryty(1), czy nie(0)                                     |
+| vertices         | słownik numerów wierzchołków i ilością wierzchołków, które mogą pokryć                                         |
+| solution         | tablica wierzchołków, które pokrywają cały graf                                                                |
+| test_result      | zmienna boolowska, informuje czy "solution" pokryło graf  i czy można zakończyć algorytm(True), czy nie(False) |
+| ordered_vertices | posortowane wierzchołki - od najwięcej pokrywających wierzchołków do najmniej                                  |
+| best_one         | wierzchołek, który w danej sytuacji pokrywa najwięcej niepokrytych wierzchołków                                |
+| not_covered      | tablica zawierająca wierzchołki, których "solution" nie pokrywa                                                |
+| matrix_to_graphViz | zmodyfikowana macierz, użyteczna w wizualizacji rozwiązania |
 
-<code python>
+```
 import copy
 
 
@@ -787,20 +831,21 @@ def Greedy_graph_cover_test(matrix,vertexAmount):
 
     display_cover_test_in_graphViz(vertexAmount, matrix_to_graphViz, solution, not_covered, 1)
     return solution
-</code>
+```
 
 
 
-===== Algorytm przeszukujący wszystkie podzbiory (Brute Force) =====
-==== Algorytm tworzący zbiór potęgowy grafu ====
+### Algorytm przeszukujący wszystkie podzbiory (Brute Force)
+#### Algorytm tworzący zbiór potęgowy grafu
 
-^ Dane ^ Opis ^
-| ''tab'' | ''lista z wierzchołkami'' |
-| ''vertexAmount'' | ''liczba wierzchołków w grafie'' |
-| ''results''  | ''lista ze wszystkimi podzbiorami grafu''|
+| Dane         | Opis                                  |
+|--------------|---------------------------------------|
+| tab          | lista z wierzchołkami                 |
+| vertexAmount | liczba wierzchołków w grafie          |
+| results      | lista ze wszystkimi podzbiorami grafu |
 
 
-<code python>
+```
 import copy
 #1. Tworzymy tablice wynikowa, z jednym zbiorem pustym
 #2. Przechodzimy po elementach tablicy wejsciowej
@@ -824,24 +869,25 @@ def power_set(tab,vertexAmount):
         tmp = []                       #zerujemy tablice wynikowa
 
     return results
-</code>
+```
 
 
-==== Algorytm pełnego przeglądu grafu w celu poszukiwania rozwiązań ====
+#### Algorytm pełnego przeglądu grafu w celu poszukiwania rozwiązań
 
-^ Dane ^ Opis ^
-| ''vertexAmount'' | ''liczba wierzchołków w grafie'' |
-| ''matrix''  | ''macierz sąsiedztwa''|
-| ''vertices_list'' | ''lista z wierzchołkami''|
-| ''sets'' | ''lista ze wszystkimi podzbiorami grafu''|
-| ''test_results'' | ''lista z odpowiedziami, czy zbiór pokrywa graf (True/False)''|
-| ''test_result'' | ''pojedyńcza odpowiedź, czy zbiór pokrywa graf (True/False)''|
-| ''for_graphViz_to_display'' | ''lista zmodyfikowanych macierzy, przydatnych w wizualizacji rozwiązań''|
-| ''matrix_to_graphViz'' | ''zmodyfikowana macierz, przyda się przy wizualizacji rozwiązania''|
-| ''not_covered_list'' | ''lista z listami niepokrytych wierzchołków''|
-| ''not_covered'' | ''lista niepokrytych wierzchołków''|
+| Dane          | Opis                                                                |
+|---------------|---------------------------------------------------------------------|
+| vertexAmount  | liczba wierzchołków w grafie                                        |
+| matrix        | macierz sąsiedztwa                                                  |
+| vertices_list | lista z wierzchołkami                                               |
+| sets          | lista z wszystkimi podzbiorami grafu                                |
+| test_results  | lista z odpowiedziami, czy zbiór  pokrywa graf(True) lub nie(False) |
+| test_result   | pojedyncza odpowiedź, czy zbiór  pokrywa graf(True) lub nie(False)  |
+| for_graphViz_to_display | lista zmodyfikowanych macierzy, użytecznych w wizualizacji rozwiązań |
+| matrix_to_graphViz | zmodyfikowana macierz, użyteczna w wizualizacji rozwiązania |
+| not_covered_list | lista z listami niepokrytych wierzchołków |
+| not_covered | lista niepokrytych wierzchołków |
 
-<code python>
+```
 def full_graph_cover_test(vertexAmount,matrix):
     vertices_list = []
     for e in range(vertexAmount):
@@ -874,13 +920,12 @@ def full_graph_cover_test(vertexAmount,matrix):
     for e in range(len(best_solutions)):
         display_cover_test_in_graphViz(vertexAmount, for_graphViz_to_display[e], best_solutions[e], not_covered_list[e], e)
 
-
     return  best_solutions
-</code>
+```
 
-=== Sposób z użyciem mniejszej ilości pamięci (optymalizacja związana z podzbiorami) ===
+#### Sposób z użyciem mniejszej ilości pamięci (optymalizacja związana z podzbiorami)
 
-<code python>
+```
 import itertools
 
 def full_graph_cover_test2(vertexAmount,matrix):
@@ -917,23 +962,23 @@ def full_graph_cover_test2(vertexAmount,matrix):
         display_cover_test_in_graphViz(vertexAmount, for_graphViz_to_display[e], best_solutions[e], not_covered_list[e], e)
 
     return best_solutions
-</code>
+```
 
-===== Algorytm prezentujący rozwiązanie przybliżone =====
-^ Dane ^ Opis ^
-| ''matrix''  | ''macierz sąsiedztwa''|
-| ''vertexAmount'' | ''liczba wierzchołków w grafie'' |
-| ''p'' | ''prawdopodobieństwo z jakim tworzono krawędzie w grafie'' |
-| ''vertices''  | ''wszystkie wierzchołki podane w jednej liście''|
-| ''minimal_length'' | ''zaokrąglona w górę wyliczona średnia wielkość pokrywającego podzbioru'' |
-| ''subsets'' | ''podzbiory grafu o podanej wielkości'' |
-| ''not_covered'' | ''lista niepokrytych wierzchołków''|
-| ''matrix_to_graphViz'' | ''zmodyfikowana macierz, przyda się przy wizualizacji rozwiązania''|
-| ''test_result'' | ''zmienna boolowska, czy dany zbiór pokrywa graf (True/False)''|
+### Algorytm prezentujący rozwiązanie przybliżone 
 
+| Dane          | Opis                                                                  |
+|---------------|-----------------------------------------------------------------------|
+| matrix        | macierz sąsiedztwa                                                    |
+| vertexAmount  | liczba wierzchołków w grafie                                          |
+| p             | prawdopodobieństwo z jakim tworzono krawędzie w grafie                |
+| vertices      | wszystkie wierzchołki podane w jednej liście                          |
+| minimalLength | zaokrąglona w górę wyliczona średnia wielkość pokrywającego podzbioru |
+| substets      | podzbiory grafu o podanej wielkości                                   |
+| not_covered | lista niepokrytych wierzchołków |
+| matrix_to_graphViz | zmodyfikowana macierz, użyteczna w wizualizacji rozwiązania |
+| test_result | zmienna boolowska, czy dany zbiór pokrywa graf(True) lub nie(False) |
 
-
-<code python>
+```
 import itertools
 import math
 
@@ -957,5 +1002,5 @@ def Aproximated_graph_cover_test(matrix, vertexAmount, p):
             if ( test_result == True):
                 display_cover_test_in_graphViz(vertexAmount, matrix_to_graphViz, subset, not_covered, 2)
                 return subset
-</code>
+```
 
