@@ -1,4 +1,5 @@
-# Temat: Problem pokrycia (VC) - pokrycie sąsiadów pierwszego i 2-rzędu.
+13.01.2021
+# Temat: Problem pokrycia (VC^2) - pokrycie sąsiadów pierwszego i 2-rzędu.
 
 Wojciech Spychalski, Agata Szpotek
 
