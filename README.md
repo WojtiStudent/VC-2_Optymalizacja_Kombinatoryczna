@@ -1,4 +1,4 @@
-13.01.2021
+13.01.2021 - Projekt na zaliczenie przedmiotu "Optymalizacja Kombinatoryczna"
 # Temat: Problem pokrycia (VC^2) - pokrycie sąsiadów pierwszego i 2-rzędu.
 
 Wojciech Spychalski, Agata Szpotek
